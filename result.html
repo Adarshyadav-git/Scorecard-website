@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Match Result</title>
+  <style>
+    body { font-family: Arial;  }
+    .match-result{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 500px;
+      margin-top: 200px;
+      margin-left: 38%;
+      background-color: rgba(141, 82, 30, 0.85);
+      color: white;
+      border-radius: 20px;
+
+    }
+  </style>
+</head>
+<body style="background-image: url(img/winbag.png); background-size: cover;
+ background-repeat: no-repeat;width: 90%;  height: 100%">
+ <div class="match-result">
+  <h1>🏆 Match Result 🏆</h1>
+  <p id="matchSummary" style="font-size: 1.5rem;"></p>
+ </div>
+
+  <script>
+    const first = JSON.parse(localStorage.getItem("firstInnings"));
+    const second = JSON.parse(localStorage.getItem("secondInnings"));
+
+    let winner = "";
+    let resultText = "";
+
+    if (first.runs > second.runs) {
+        winner = first.team;
+        resultText = `${first.team} won the match by ${first.runs - second.runs} runs.`;
+    } else if (second.runs > first.runs) {
+        winner = second.team;
+        resultText = `${second.team} won the match by ${10 - second.wickets} wickets.`;
+    } else {
+        resultText = "Match Tied!";
+    }
+
+    document.getElementById("matchSummary").innerText = resultText;
+  </script>
+</body>
+</html>
