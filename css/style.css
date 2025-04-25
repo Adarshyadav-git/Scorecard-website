@@ -1,176 +1,306 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+body{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+}
+.welcomehead{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  margin-top: 0px;
+  height: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+.play{
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 0px;
+}
+.teamSetup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: rgba(28, 50, 50, 0.85);
+  padding-top: 50px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+}
+.team{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+
+}
+.submit{
+  background-color: black;
+  color: white;
+  border-radius: 28px;
+  height: 28px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.tossDetails{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  background-color: rgba(28, 50, 50, 0.85);
+  gap: 20px;
+  border-radius: 20px;
+}
+.teamtoss{
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: black;
+  color: white;
+  height: 28px;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;    
+  width: 150px;
+}
+.tossButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: gold;
+  color: black;
+}
+@keyframes buttonFlip{
+  0% {transform: rotateY(0);}
+  50% {transform: rotateY(180deg);}
+  100% {transform: rotateY(360deg);}
+}
+.tossButton.animate{
+  animation: buttonFlip 1s ease-in-out;
+}
+.result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  background-color: rgba(141, 82, 30, 0.85);
+  color: rgb(255, 255, 255);
+  height: 50px;
+  font-size: 2rem;
 }
 
-.backgroundimg {
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 30px;
-    box-sizing: border-box;
-}
-.vssetup{
-    color: orangered;
+.playerInputSection, .strikerDisplay, .resetDiv {
+  margin-top: 20px;
+  text-align: center;
 }
 
-.headingofteam{
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #222;
+#playerInputs input {
+  margin: 5px;
+  padding: 5px;
+  width: 200px;
 }
 
-.teamSetup {
-    position: absolute;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 30px;
-    border-radius: 20px;
-    width: 300px;
-    top: 20%;
-    left: 40%;
+.strikerDisplay span {
+  font-weight: bold;
+  color: green;
+  font-size: 1.2em;
 }
 
-.playerinfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-    margin-top: 40px;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 20px;
-    border-radius: 20px;
+
+.nextBtnDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  
+}
+.nextbtn{
+  justify-content: center;
+  align-items: center;
+  border-radius: 28px;
+  height: 28px;
+  background-color: black;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+.oversSelection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: rgba(28, 50, 50, 0.85);
+  padding: 30px;
+  gap: 30px;
+  border-radius: 20px;
+}
+.enterOvers{
+  border-radius: 20px;
+  height: 20px;
+  color: black;
+  background-color: white;
+}
+.submitOver{
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  height: 28px;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
+.bat-ballSelection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 30px;
+  background-color: rgba(28, 50, 50, 0.85);
+  color: white;
+  border-radius: 20px;
+}
+.selectOpn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  border-radius: 20px;
+  width: 100px;
+  height: 28px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  margin-top: 150px;
+  height: 50px;
+  width: 100%;
+  gap: 10px;
+}
+.scoreCalculation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 247, 247, 0.85);
+  margin-top: 30px;
+  height: 50px;
+  gap: 30px;
+}
+.scoreCalculation button{
+ background-color: black;
+ color: white;
+ height: 28px;
+ border-radius: 20px;
+ padding-left: 20px;
+ padding-right: 20px;
+}
+.finalScoreDisplay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 1.5rem;
+  background-color: rgba(0, 247, 247, 0.85);
+  color: black;
+}
+.ManualEnding{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.score-btnend-innings-btn{
+  display: flex;
+  align-items: center;
+  background-color: darkred;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 28px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+.lastSixBalls{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  height: 60px;
+  font-size: 1.15rem;
+  margin-top: 20px;
+}
+.ball {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  padding: 6px 10px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  width: 20px;
+  height: 20px;
 }
 
-.teamA, .teamB {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.Runs123 {
+  background-color: #bdc3c7; 
+  color: black;
 }
 
-.vs {
-    font-size: 24px;
-    font-weight: bold;
-    color: red;
-    align-self: center;
-    margin-top: 50px;
+.boundary {
+  background-color: #ffe066;
+  color: #000;
+}
+.Six{
+  background-color: orangered;
+  color: white;
 }
 
-input[type="text"] {
-    padding: 10px;
-    margin: 8px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-input[type="submit"]{
-    padding: 10px;
-    margin: 8px;
-    border-radius: 8px;
-    color: rgb(255, 255, 255);
-    background-color: darkgreen;
-    border: 1px solid #ccc;
+.wicket {
+  background-color: red; /* Red for wicket */
+  color: white;
 }
 
-.teamsort {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    background-color: darkgreen;
-    color: white;
-    border: none;
+.noball {
+  background-color: #8e44ad; /* Purple for NB */
+  color: white;
 }
 
-.toss-box {
-   color: #007bff;
-  }
-  
-  /* Headings */
-  .toss-box h2, .toss-box h3 {
-  color: #d1e800;
-  }
-  
-  /* Coin */
-  .coin {
-    width: 80px;
-    height: 80px;
-    margin: 15px auto;
-    border-radius: 50%;
-    background: linear-gradient(135deg, gold, orange);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    color: white;
-    transition: transform 1s ease-in-out;
-    perspective: 1000px;
-  }
-  
-  .coin.flip {
-    animation: coinFlip 1s ease-in-out;
-  }
-  
-  @keyframes coinFlip {
-    0%   { transform: rotateY(0deg); }
-    50%  { transform: rotateY(180deg); }
-    100% { transform: rotateY(360deg); }
-  }
-  
-  /* Toss Button */
-  button.btn, .toss-box button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 65px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s ease;
-  }
-  
-  button.btn:hover, .toss-box button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Dropdown and Confirm */
-  #decisionContainer {
-    margin-top: 20px;
-  }
-  
-  #decisionSelect {
-    padding: 8px 12px;
-    font-size: 15px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    width: 60%;
-    margin-bottom: 10px;
-  }
-  
-  /* Responsive Tweaks */
-  @media screen and (max-width: 600px) {
-    .toss-box {
-      padding: 15px;
-    }
-  
-    .coin {
-      width: 60px;
-      height: 60px;
-      font-size: 16px;
-    }
-  
-    button.btn {
-      font-size: 14px;
-      padding: 8px 16px;
-    }
-  
-    #decisionSelect {
-      font-size: 14px;
-      width: 100%;
-    }
-  }
-    
+.wide {
+  background-color: #3498db; /* Blue for wide */
+  color: white;
+}
+
+.dot {
+  background-color: #19ff04; /* Gray for dot */
+  color: black;
+}
