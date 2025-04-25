@@ -1,68 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Cricket-ScoreCard</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/toss.css">
-</head>
-<body style="background-image: url(img/background.jpg); background-size: cover;
-background-position: center; background-repeat: no-repeat;width: 100%;  ">
-   <div class="backgroundimg">
 
-    <!--team names setup form-->
-     <div class="teamSetup">
-        <h1>Welcome To Cricket Score Card</h1>
-        <h2>Team Details</h2>
-        <input type="text" id="teamA" placeholder="Team-A Name">
-        <br><br><h1 class="vssetup">VS</h1><br>
-        <input type="text" id="teamB" placeholder="Team-B Name">
-        <br><br>
-        <input class="submit" type="submit" value="Next" onclick="showPlayerInput()">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body style="background-image: url(img/background.jpg); background-size: cover;
+background-position: center; background-repeat: no-repeat;width: 100%;  height: 100vh">
+  <h2 class="welcomehead">Welcome To Cricket Score - Card</h2>
+  <!-- user inputs  -->
+  <div class="loginForm" id="loginForm">
+    <div class="teamSetup">
+      <p class="play">Let's Play Cricket</p>
+      <input class="team" type="text" id="team1" placeholder="Enter Team-1 Name">
+      <br><br>
+      <input class="team" type="text"  id="team2" placeholder="Enter Team-2 Name">
+      <br><br>
+      <input class="submit" type="submit"  id="submitbutton" onclick="prepareToss()">
     </div>
 
-    <!-- player information form -->
-    <div class="playerinfo" id="playerDetails" style="display: none;">
-        <h2 class="headingofteam" id="teamHeading"></h2>
-      
-        <div class="teamA" id="teamAPlayers">
-          <h3 id="teamANameHeading"></h3>
-          <div id="teamAInputs"></div>
-        </div>
-          <span class="vs">VS</span>
-        <div class="teamB" id="teamBPlayers">
-          <h3 id="teamBNameHeading"></h3>
-          <div id="teamBInputs"></div>
-        </div>
-        <input type="submit" value="Continue" class="teamsort" onclick="teamArranged()">
-      </div>
+    <!-- Toss UI -->
 
-        <!-- Toss UI -->
+    <div class="tossDetails" id="tossSection" style="display: none;">
+      <div class="teamtoss" id="leftTeam"></div>
+      <button class="tossButton" onclick="doToss()">TOSS</button>
+      <div class="teamtoss" id="rightTeam"></div>
+    </div>
 
-        <div class="tossDetails" id="tossSection" style="display: none;">
-          <div class="team" id="leftTeam"></div>
-          <button onclick="doToss()">TOSS</button>
-          <div class="team" id="rightTeam"></div>
-      </div>
+    <!-- result -->
+    <div class="result" id="tossResult" style="display: none;"></div>
+
+    <!-- winning team bat or ball first selection -->
+    <div class="bat-ballSelection" id="bat-ballSelection" style="display: none;">
+      <h3 id="tossWinningTeam"></h3>
+      <select name="" id="selectOpn" class="selectOpn">
+        <option value="" disabled selected>Select an option</option>
+        <option value="BatFirst">Bat</option>
+        <option value="BallFirst">Ball</option>
+      </select>
+    </div>
+
+    <div class="nextBtnDiv" id="nextBtnDiv" style="display: none;">
+      <button class="nextbtn" id="next" onclick="next()">Next</button>
+    </div>
+  </div>
+
+  <!-- ScoreBoard table -->
+
+  <div class="table" id="table" style="display: none;">
+    Team: <span class="battingfirstTeam" id="battingfirstTeam"></span>
+    Runs: <span id="runs">0</span>
+    Wickets: <span id="wickets">0</span>
+    Overs: <span id="overs">0.0</span>
+  </div>
+  <div id="lastSixBalls" class="lastSixBalls" style="display: none;">Last 6 Balls :</div>
+  <div class="scoreCalculation" id="scoreCalculation" style="display: none;">
+    <button onclick="addRuns(1)">1</button>
+    <button onclick="addRuns(2)">2</button>
+    <button onclick="addRuns(3)">3</button>
+    <button onclick="addRuns(4)">4</button>
+    <button onclick="addRuns(6)">6</button>
+    <button onclick="addWickets()">Wicket</button>
+    <button onclick="addNoball()">No ball</button>
+    <button onclick="addWideball()">Wide ball</button>
+    <button onclick="dotball()">Dot ball</button>
+    
+  </div>
+  <div class="ManualEnding">
+  <button id="endInningsBtn" onclick="endInnings()" class="score-btnend-innings-btn" style="display: none;">End Innings</button>
+  </div>
   
-      <!-- result -->
-       <div class="result" id="tossResult"></div>
-       
-
-<!-- First innings setup -->
-<div class="firstinnings" style="display: none;">
-  <h2>Wel-Come to Cricket Score-Card</h2>
-  <label for="format">Choose the Match Format</label>
-  <select name="format" id="format" class="format">
-    <option value="T20">T20</option>
-    <option value="ODI">ODI</option>
-    <option value="Test">Test</option>
-    <option value="gully-Cricket">Gully-Cricket</option>
-  </select>
-  <input type="submit" value="Confirm" class="confirm">
-</div>
-
-</div> 
-    <script src="js/script.js"></script>
-    <script src="js/toss.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
