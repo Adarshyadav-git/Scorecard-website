@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cricket-ScoreCard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/toss.css">
+</head>
+<body style="background-image: url(img/background.jpg); background-size: cover;
+background-position: center; background-repeat: no-repeat;width: 100%;  ">
+   <div class="backgroundimg">
+
+    <!--team names setup form-->
+     <div class="teamSetup">
+        <h1>Welcome To Cricket Score Card</h1>
+        <h2>Team Details</h2>
+        <input type="text" id="teamA" placeholder="Team-A Name">
+        <br><br><h1 class="vssetup">VS</h1><br>
+        <input type="text" id="teamB" placeholder="Team-B Name">
+        <br><br>
+        <input class="submit" type="submit" value="Next" onclick="showPlayerInput()">
+    </div>
+
+    <!-- player information form -->
+    <div class="playerinfo" id="playerDetails" style="display: none;">
+        <h2 class="headingofteam" id="teamHeading"></h2>
+      
+        <div class="teamA" id="teamAPlayers">
+          <h3 id="teamANameHeading"></h3>
+          <div id="teamAInputs"></div>
+        </div>
+          <span class="vs">VS</span>
+        <div class="teamB" id="teamBPlayers">
+          <h3 id="teamBNameHeading"></h3>
+          <div id="teamBInputs"></div>
+        </div>
+        <input type="submit" value="Continue" class="teamsort" onclick="teamArranged()">
+      </div>
+
+        <!-- Toss UI -->
+
+        <div class="tossDetails" id="tossSection" style="display: none;">
+          <div class="team" id="leftTeam"></div>
+          <button onclick="doToss()">TOSS</button>
+          <div class="team" id="rightTeam"></div>
+      </div>
+  
+      <!-- result -->
+       <div class="result" id="tossResult"></div>
+       
+
+<!-- First innings setup -->
+<div class="firstinnings" style="display: none;">
+  <h2>Wel-Come to Cricket Score-Card</h2>
+  <label for="format">Choose the Match Format</label>
+  <select name="format" id="format" class="format">
+    <option value="T20">T20</option>
+    <option value="ODI">ODI</option>
+    <option value="Test">Test</option>
+    <option value="gully-Cricket">Gully-Cricket</option>
+  </select>
+  <input type="submit" value="Confirm" class="confirm">
+</div>
+
+</div> 
+    <script src="js/script.js"></script>
+    <script src="js/toss.js"></script>
+</body>
+</html>

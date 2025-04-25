@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.backgroundimg {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.vssetup{
+    color: orangered;
+}
+
+.headingofteam{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #222;
+}
+
+.teamSetup {
+    position: absolute;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    top: 20%;
+    left: 40%;
+}
+
+.playerinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.teamA, .teamB {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vs {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    align-self: center;
+    margin-top: 50px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+input[type="submit"]{
+    padding: 10px;
+    margin: 8px;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background-color: darkgreen;
+    border: 1px solid #ccc;
+}
+
+.teamsort {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+}
+
+.toss-box {
+   color: #007bff;
+  }
+  
+  /* Headings */
+  .toss-box h2, .toss-box h3 {
+  color: #d1e800;
+  }
+  
+  /* Coin */
+  .coin {
+    width: 80px;
+    height: 80px;
+    margin: 15px auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, gold, orange);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: white;
+    transition: transform 1s ease-in-out;
+    perspective: 1000px;
+  }
+  
+  .coin.flip {
+    animation: coinFlip 1s ease-in-out;
+  }
+  
+  @keyframes coinFlip {
+    0%   { transform: rotateY(0deg); }
+    50%  { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
+  }
+  
+  /* Toss Button */
+  button.btn, .toss-box button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 65px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+  
+  button.btn:hover, .toss-box button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Dropdown and Confirm */
+  #decisionContainer {
+    margin-top: 20px;
+  }
+  
+  #decisionSelect {
+    padding: 8px 12px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 60%;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Tweaks */
+  @media screen and (max-width: 600px) {
+    .toss-box {
+      padding: 15px;
+    }
+  
+    .coin {
+      width: 60px;
+      height: 60px;
+      font-size: 16px;
+    }
+  
+    button.btn {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    #decisionSelect {
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+    
